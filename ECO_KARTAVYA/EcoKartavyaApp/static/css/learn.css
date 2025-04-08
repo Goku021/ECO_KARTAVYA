@@ -1,0 +1,158 @@
+/* ===== Learn Page Styles ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ecfdf5;
+    color: #065f46;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #064e3b;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #d1fae5;
+    font-weight: 500;
+    font-size: 16px;
+    margin-right: 45px;
+    gap: 10px;
+  }
+  
+  .nav-links i{
+    margin-right: 8px;
+  }
+
+  .nav-links li a.active,
+  .nav-links li a:hover {
+    color: #5eead4;
+  }
+  
+  .logo {
+    color: #a7f3d0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .learn-header {
+    text-align: center;
+    margin-top: 70px;
+    padding: 30px;
+    background: linear-gradient(to right, #d1fae5, #d4edda);
+  }
+  
+  .learn-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .learn-header p {
+    font-size: 18px;
+    color: #065f46;
+  }
+  
+  .learn-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+    gap: 30px;
+    padding: 40px 60px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #10b981;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card i {
+    font-size: 34px;
+    color: #10b981;
+    margin-bottom: 15px;
+  }
+  
+  .card h3 {
+    color: #064e3b;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .card p {
+    font-size: 14.5px;
+    color: #4b5563;
+    line-height: 1.5;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Make responsive for smaller screens */
+  @media (max-width: 992px) {
+    .learn-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .learn-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+  .learn-quote {
+    padding: 40px;
+    text-align: center;
+    background-color: #d1fae5;
+    font-style: italic;
+    font-size: 20px;
+  }
+  
+  .learn-quote span {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+  }
+  
+  .footer {
+    text-align: center;
+    background-color: #064e3b;
+    color: #d1fae5;
+    padding: 20px;
+    font-size: 14px;
+  }
+  

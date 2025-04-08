@@ -1,0 +1,39 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.profile-card {
+  background-color: #e0f5e6;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.profile-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+
+.profile-card h2 {
+  font-size: 28px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.profile-email {
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+
+.eco-details p {
+  font-size: 18px;
+  color: #388e3c;
+  margin: 10px 0;
+}

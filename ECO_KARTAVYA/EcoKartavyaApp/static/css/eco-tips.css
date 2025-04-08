@@ -1,0 +1,243 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #064e3b;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #a7f3d0;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .nav-logo img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #d1fae5;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+    margin-right: 35px;
+  }
+  
+  .nav-links li a:hover {
+    color: #5eead4;
+  }
+  
+  .nav-links i {
+    margin-right: 8px;
+  }
+  
+
+  /* Body Styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+
+  }
+  
+  /* Header Styling */
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    color: #2f855a;
+    margin-top: 100px;
+
+  }
+  
+  header p {
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  /* Tips Container */
+  .tips-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Individual Tip Card */
+  .tip-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .tip-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tip-card i {
+    font-size: 2rem;
+    color: #2f855a;
+    margin-bottom: 10px;
+  }
+  
+  .tip-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .tip-card p {
+    font-size: 1em;
+    color: #555;
+  }
+  
+ /* ====== PREMIUM FOOTER STYLING ====== */
+ .dashboard-footer {
+    background-color: #064e3b;
+    color: #d1fae5;
+    padding: 50px 60px 30px;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    margin-top: 30px;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  
+  .footer-brand img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-brand h3 {
+    color: #5eead4;
+    margin: 0;
+  }
+  
+  .footer-brand p {
+    font-size: 14px;
+    color: #a7f3d0;
+    margin-top: 5px;
+  }
+  
+  .social-icons a {
+    color: #d1fae5;
+    margin-right: 12px;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #5eead4;
+  }
+  
+  .footer-links h4,
+  .footer-contact h4,
+  .newsletter h4 {
+    margin-bottom: 10px;
+    color: #a7f3d0;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin: 8px 0;
+  }
+  
+  .footer-links ul li a {
+    color: #d1fae5;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #5eead4;
+  }
+  
+  .footer-contact p {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  
+  .footer-contact i {
+    margin-right: 8px;
+    color: #5eead4;
+  }
+  
+  .newsletter form {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  .newsletter input {
+    padding: 8px 12px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    outline: none;
+    width: 200px;
+  }
+  
+  .newsletter button {
+    background-color: #10b981;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .newsletter button:hover {
+    background-color: #059669;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #115e59;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #a7f3d0;
+    position: relative;
+  }
+ 

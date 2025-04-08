@@ -1,0 +1,89 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0fff4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .achievements-section {
+    max-width: 1000px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+  
+  h1, h2 {
+    color: #2f855a;
+  }
+  
+  .badges-container {
+    margin-top: 30px;
+  }
+  
+  .badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .badge {
+    background: #edf2f7;
+    padding: 15px;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .badge img {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .unlocked .badge {
+    background: #c6f6d5;
+  }
+  
+  .locked .badge {
+    opacity: 0.6;
+  }
+  
+  .streak-container {
+    background: #faf089;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+  
+  .certificate-section {
+    margin-top: 40px;
+  }
+  
+  #generateCertificate {
+    padding: 10px 25px;
+    background: #38a169;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .share-button {
+    margin-top: 30px;
+  }
+  
+  .share-button button {
+    background-color: #2b6cb0;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  

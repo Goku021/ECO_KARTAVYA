@@ -1,0 +1,359 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoKartavya - Dashboard</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <style>
+        .profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #e6fffa, #f0fff4);
+}
+
+.profile-card {
+  max-width: 420px;
+  width: 100%;
+  padding: 30px 25px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.profile-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #38a169;
+}
+
+.profile-email {
+  color: #2d3748;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.eco-details p {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #2f855a;
+}
+
+.tier-level {
+  margin-top: 20px;
+}
+
+.tier {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #22543d;
+  background-color: #c6f6d5;
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.animated-shadow {
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+    </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+  <div class="nav-logo">
+    <img src="{% static 'images/e9.png' %}" alt="EcoKartavya Logo">
+    EcoKartavya
+  </div>
+  <ul class="nav-links">
+    <li><a href="/home"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="/track"><i class="fas fa-check-square"></i> Track</a></li>
+    <li><a href="/badges"><i class="fas fa-award"></i> Badges</a></li>
+    <li class="profile-dropdown">
+      <a href="{% url 'profile' %}" id="profileToggle">
+        <i class="fas fa-user-circle"></i> Profile <i class="fas fa-caret-down"></i>
+      </a>
+      <ul class="dropdown-menu" id="profileDropdown">
+        <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section class="hero">
+  <h1>Welcome back, <span class="highlight">{{ user.first_name|default:user.username }}</span> 🌱</h1>
+  <p>Your small steps make a big impact.</p>
+</section>
+
+<!-- ========== PROFILE CARD ========== -->
+<section class="profile-wrapper">
+  <div class="profile-card glass-effect animated-shadow">
+    <img src="{% static 'images/avatar_bg_clear.png' %}" alt="User Icon" class="profile-icon">
+    <h2>{{ user.first_name|default:user.username }}</h2>
+    <p class="profile-email"><i class="fas fa-envelope"></i> {{ user.email }}</p>
+
+    <div class="eco-details">
+      <p><i class="fas fa-leaf"></i> EcoPoints: <strong>{{ points }}</strong></p>
+      <p><i class="fas fa-award"></i> Badges Earned:
+        <strong>
+          {% if points >= 1000 %} 3
+          {% elif points >= 500 %} 2
+          {% elif points >= 100 %} 1
+          {% else %} 0
+          {% endif %}
+        </strong>
+      </p>
+    </div>
+
+    <div class="tier-level">
+      {% if points >= 1000 %}
+        <p class="tier">🌟 Eco Champion 🌟</p>
+      {% elif points >= 500 %}
+        <p class="tier">💚 Green Warrior</p>
+      {% elif points >= 100 %}
+        <p class="tier">🍀 Eco Starter</p>
+      {% else %}
+        <p class="tier">🌱 Getting Started</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== STATS CARDS ========== -->
+<section class="dashboard">
+  <div class="eco-stats">
+    <div class="stat-card">
+      <i class="fas fa-leaf"></i>
+      <h3>Total EcoPoints</h3>
+      <p>{{ points }}</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-calendar-check"></i>
+      <h3>Streak</h3>
+      <p>{{ streak }} days</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-tree"></i>
+      <h3>Impact</h3>
+      <p>{{ co2_saved }} kg CO₂ Saved</p>
+    </div>
+  </div>
+
+  <!-- ========== PROGRESS RING (STATIC VISUAL ONLY) ========== -->
+  <div class="progress-section">
+    <h2>Your Progress</h2>
+    <div class="progress-ring">
+      <svg>
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" />
+      </svg>
+      <div class="percentage">65%</div>
+    </div>
+    <p class="next-badge-msg">You're just <strong>35%</strong> away from the next badge! 💪</p>
+  </div>
+
+  <!-- ========== WEEKLY CHART ========== -->
+  <div class="eco-chart-wrapper">
+    <h2><i class="fas fa-chart-bar"></i> Your Eco Impact</h2>
+    <canvas id="ecoDashboardChart" width="800" height="400"></canvas>
+    <div class="chart-actions">
+      <button id="downloadPNG">📥 Download PNG</button>
+      <button id="exportPDF">📄 Export PDF</button>
+    </div>
+  </div>
+
+  <!-- ========== BADGES DISPLAY ========== -->
+  <div class="badges-section">
+    <h2>Your Achievements</h2>
+    <div class="badges">
+      <div class="badge"><img src="{% static 'images/e17.png' %}" alt="Badge 1"><p>Green Starter</p></div>
+      {% if points >= 500 %}
+      <div class="badge"><img src="{% static 'images/e18.png' %}" alt="Badge 2"><p>Eco Saver</p></div>
+      {% endif %}
+      {% if points >= 1000 %}
+      <div class="badge"><img src="{% static 'images/e16.png' %}" alt="Badge 3"><p>Eco Champion</p></div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- ========== CERTIFICATE ========== -->
+  <section class="certificate-section">
+    <h2><i class="fas fa-certificate"></i> Download Your Green Certificate</h2>
+    <p>Celebrate your eco journey! Based on your total points, download your customized certificate.</p>
+    <button id="generateCertificateBtn" class="btn-download">
+      <i class="fas fa-download"></i> Download Certificate
+    </button>
+    <canvas id="certificateCanvas" width="1000" height="700" style="display:none;"></canvas>
+    <img id="badgeImage" src="{% static 'images/e16.png' %}" style="display: none;">
+  </section>
+
+  <!-- ========== QUOTE SECTION ========== -->
+  <div class="quote-section">
+    {% if points >= 1000 %}
+      <blockquote>“Act as if what you do makes a difference. It does.”</blockquote><span>– William James</span>
+    {% elif points >= 500 %}
+      <blockquote>“Small acts, when multiplied by millions, can transform the world.”</blockquote><span>– Howard Zinn</span>
+    {% elif points >= 100 %}
+      <blockquote>“The Earth is what we all have in common.”</blockquote><span>– Wendell Berry</span>
+    {% else %}
+      <blockquote>“The journey of a thousand miles begins with a single step.”</blockquote><span>– Lao Tzu</span>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="dashboard-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="{% static 'images/e9.png' %}" alt="EcoKartavya Logo">
+      <h3>EcoKartavya</h3>
+      <p>Empowering you to build a greener tomorrow 🌱</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/learn">Learn</a></li>
+        <li><a href="/track">Track</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-envelope"></i> hello@ecokartavya.org</p>
+      <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+      <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+    </div>
+
+    <div class="newsletter">
+      <h4>Join Our Green Tribe 🌿</h4>
+      <p>Get weekly tips and updates right in your inbox.</p>
+      <form>
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Submit <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 EcoKartavya | Designed with 💚 for a better planet.</p>
+  </div>
+</footer>
+<script>
+  const userName = "{{ user.first_name|default:user.username }}";
+  const userEmail = "{{ user.email }}";
+  const totalPoints = {{ points|default:0 }};
+  const ecoLevel = `{% if points >= 1000 %}🌿 Eco Legend{% elif points >= 500 %}🌱 Premium Guardian{% elif points >= 200 %}🌍 Eco Champ{% elif points > 0 %}🌼 Green Starter{% else %}🌾 Getting Started{% endif %}`;
+  document.getElementById("generateCertificateBtn").addEventListener("click", () => {
+    const canvas = document.getElementById("certificateCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Background
+    ctx.fillStyle = "#e6fffa";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Border
+    ctx.strokeStyle = "#38a169";
+    ctx.lineWidth = 8;
+    ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+    // Title
+    ctx.fillStyle = "#22543d";
+    ctx.font = "bold 40px 'Segoe UI'";
+    ctx.textAlign = "center";
+    ctx.fillText("Certificate of Eco Achievement", canvas.width / 2, 100);
+
+    // Subtitle
+    ctx.font = "20px 'Segoe UI'";
+    ctx.fillStyle = "#2f855a";
+    ctx.fillText("Awarded to", canvas.width / 2, 160);
+
+    // User name
+    ctx.font = "32px 'Segoe UI'";
+    ctx.fillStyle = "#065f46";
+    ctx.fillText(userName, canvas.width / 2, 210);
+
+    // Appreciation line
+    ctx.font = "18px 'Segoe UI'";
+    ctx.fillStyle = "#2f855a";
+    ctx.fillText("For your green actions and dedication towards a sustainable future.", canvas.width / 2, 260);
+
+    // Points & Eco Level
+    ctx.font = "18px 'Segoe UI'";
+    ctx.fillText(`Total Points: ${totalPoints} | Level: ${ecoLevel}`, canvas.width / 2, 310);
+
+    // Date & Branding
+    const date = new Date().toLocaleDateString();
+    ctx.font = "16px 'Segoe UI'";
+    ctx.textAlign = "left";
+    ctx.fillText("EcoKartavya", 60, 650);
+
+    ctx.textAlign = "right";
+    ctx.fillText(`Date: ${date}`, canvas.width - 60, 650);
+
+    // Badge image
+    const badgeImg = document.getElementById("badgeImage");
+
+    const drawAndDownload = () => {
+        ctx.drawImage(badgeImg, canvas.width / 2 - 50, 340, 100, 100);
+        const link = document.createElement("a");
+        link.download = `EcoKartavya_Certificate_${userName.replace(/\s+/g, "_")}.png`;
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+    };
+
+    badgeImg.complete ? drawAndDownload() : badgeImg.onload = drawAndDownload;
+});
+</script>
+
+
+<script src="{% static 'js/dashboard.js' %}"></script>
+</body>
+</html>

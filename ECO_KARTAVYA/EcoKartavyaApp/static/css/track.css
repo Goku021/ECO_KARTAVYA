@@ -1,0 +1,611 @@
+/*!* Reset & Base *!*/
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*    font-family: 'Segoe UI', sans-serif;*/
+/*  }*/
+/*  */
+/*  body {*/
+/*    background: #f4f9f4;*/
+/*    color: #333;*/
+/*    line-height: 1.6;*/
+/*  }*/
+/*  */
+/*  !* Navbar *!*/
+/*  .navbar {*/
+/*    background: #2f855a;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    padding: 15px 30px;*/
+/*    color: white;*/
+/*  }*/
+/*  */
+/*  .navbar .nav-logo {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    font-size: 1.5rem;*/
+/*    font-weight: bold;*/
+/*  }*/
+/*  */
+/*  .navbar img {*/
+/*    height: 40px;*/
+/*    margin-right: 10px;*/
+/*  }*/
+/*  */
+/*  .nav-links li {*/
+/*    display: inline;*/
+/*    margin-left: 20px;*/
+/*  }*/
+/*  */
+/*  .nav-links a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    font-weight: 500;*/
+/*  }*/
+/*  */
+/*  !* Track Section *!*/
+/*  .track-section {*/
+/*    padding: 60px 5%;*/
+/*    text-align: center;*/
+/*  }*/
+/*  */
+/*  .track-section h1 {*/
+/*    font-size: 2.8rem;*/
+/*    color: #2f855a;*/
+/*    margin-bottom: 20px;*/
+/*  }*/
+/*  */
+/*  .subtitle {*/
+/*    font-size: 1.2rem;*/
+/*    color: #4a5568;*/
+/*    margin-bottom: 40px;*/
+/*  }*/
+/*  */
+/*  .track-cards,*/
+/*  .track-bonus-cards {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: center;*/
+/*    gap: 25px;*/
+/*    padding: 20px;*/
+/*  }*/
+/*  */
+/*  .track-card {*/
+/*    background: rgba(255, 255, 255, 0.85);*/
+/*    backdrop-filter: blur(8px);*/
+/*    border-radius: 16px;*/
+/*    padding: 24px;*/
+/*    width: 280px;*/
+/*    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);*/
+/*    transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+/*    text-align: center;*/
+/*    position: relative;*/
+/*    border: 1px solid #e2e8f0;*/
+/*  }*/
+/*  */
+/*  .track-card:hover {*/
+/*    transform: translateY(-5px) scale(1.02);*/
+/*    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);*/
+/*  }*/
+/*  */
+/*  .track-card i {*/
+/*    font-size: 2.2rem;*/
+/*    color: #2f855a;*/
+/*    margin-bottom: 12px;*/
+/*    display: block;*/
+/*  }*/
+/*  */
+/*  .track-card h3 {*/
+/*    font-size: 1.1rem;*/
+/*    color: #1a202c;*/
+/*    margin-bottom: 12px;*/
+/*  }*/
+/*  */
+/*  .track-card input[type="number"] {*/
+/*    width: 100%;*/
+/*    padding: 12px;*/
+/*    font-size: 1rem;*/
+/*    border: 1px solid #cbd5e0;*/
+/*    border-radius: 8px;*/
+/*    background: #f9fafb;*/
+/*    transition: border-color 0.3s ease, box-shadow 0.3s ease;*/
+/*  }*/
+/*  */
+/*  .track-card input[type="number"]:focus {*/
+/*    border-color: #38a169;*/
+/*    box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.3);*/
+/*    outline: none;*/
+/*  }*/
+/*  */
+/*  .custom-action {*/
+/*    width: 100%;*/
+/*    max-width: 1200px;*/
+/*    margin: 40px auto 0;*/
+/*    padding: 25px;*/
+/*    background: rgba(255, 255, 255, 0.85);*/
+/*    backdrop-filter: blur(6px);*/
+/*    border-radius: 14px;*/
+/*    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);*/
+/*    text-align: center;*/
+/*    border: 1px solid #e2e8f0;*/
+/*  }*/
+/*  */
+/*  .custom-action label {*/
+/*    font-size: 1.1rem;*/
+/*    font-weight: 600;*/
+/*    color: #2d3748;*/
+/*    display: block;*/
+/*    margin-bottom: 14px;*/
+/*  }*/
+/*  */
+/*  .custom-action i {*/
+/*    margin-right: 8px;*/
+/*    color: #2f855a;*/
+/*  }*/
+/*  */
+/*  .custom-action input[type="text"] {*/
+/*    width: 90%;*/
+/*    max-width: 700px;*/
+/*    padding: 14px;*/
+/*    font-size: 1rem;*/
+/*    border: 1px solid #cbd5e0;*/
+/*    border-radius: 8px;*/
+/*    background: #f9fafb;*/
+/*    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);*/
+/*    transition: 0.3s ease;*/
+/*  }*/
+/*  */
+/*  .custom-action input[type="text"]:focus {*/
+/*    border-color: #38a169;*/
+/*    box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.3);*/
+/*    outline: none;*/
+/*  }*/
+/*  */
+/*  */
+/*  .submit-btn {*/
+/*    margin-top: 40px;*/
+/*    background: linear-gradient(to right, #38a169, #2f855a);*/
+/*    color: white;*/
+/*    padding: 14px 36px;*/
+/*    border: none;*/
+/*    font-size: 1.1rem;*/
+/*    border-radius: 10px;*/
+/*    cursor: pointer;*/
+/*    transition: background 0.3s ease, transform 0.2s ease;*/
+/*    display: block;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*  }*/
+/*  */
+/*  .submit-btn:hover {*/
+/*    background: linear-gradient(to right, #2f855a, #276749);*/
+/*    transform: scale(1.03);*/
+/*  }*/
+/*  */
+/*  #success-msg {*/
+/*    text-align: center;*/
+/*    color: #2f855a;*/
+/*    font-weight: bold;*/
+/*    margin-top: 15px;*/
+/*  }*/
+/*  */
+/*  */
+/*  !* ECO STATS SECTION *!*/
+/*.impact-section {*/
+/*    background: linear-gradient(135deg, #e8f5e9, #e0f2f1);*/
+/*    padding: 60px 20px;*/
+/*    border-radius: 12px;*/
+/*    margin: 60px auto;*/
+/*    max-width: 1100px;*/
+/*    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);*/
+/*    transition: all 0.3s ease-in-out;*/
+/*  }*/
+/*  */
+/*  .impact-section h2 {*/
+/*    text-align: center;*/
+/*    font-size: 2.2rem;*/
+/*    margin-bottom: 40px;*/
+/*    color: #1b5e20;*/
+/*    position: relative;*/
+/*  }*/
+/*  */
+/*  .impact-section h2 i {*/
+/*    margin-right: 10px;*/
+/*    color: #388e3c;*/
+/*  }*/
+/*  */
+/*  .impact-cards {*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*    flex-wrap: wrap;*/
+/*    gap: 30px;*/
+/*  }*/
+/*  */
+/*  .impact-card {*/
+/*    background: #ffffff;*/
+/*    border-radius: 16px;*/
+/*    padding: 25px;*/
+/*    text-align: center;*/
+/*    width: 240px;*/
+/*    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);*/
+/*    transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+/*    cursor: pointer;*/
+/*  }*/
+/*  */
+/*  .impact-card:hover {*/
+/*    transform: translateY(-8px);*/
+/*    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);*/
+/*  }*/
+/*  */
+/*  .impact-card i {*/
+/*    font-size: 2.5rem;*/
+/*    color: #43a047;*/
+/*    margin-bottom: 15px;*/
+/*  }*/
+/*  */
+/*  .impact-card h3 {*/
+/*    font-size: 1.3rem;*/
+/*    color: #2e7d32;*/
+/*    margin-bottom: 10px;*/
+/*  }*/
+/*  */
+/*  .impact-card p {*/
+/*    font-size: 1.1rem;*/
+/*    font-weight: 500;*/
+/*    color: #333;*/
+/*    background-color: #f1f8e9;*/
+/*    padding: 10px;*/
+/*    border-radius: 10px;*/
+/*    display: inline-block;*/
+/*  }*/
+
+/*  .full-width-card {*/
+/*    width: 100%;*/
+/*    flex-basis: 100%;*/
+/*  }*/
+/*  */
+/*  */
+/*  .eco-dashboard {*/
+/*    max-width: 1270px;*/
+/*    margin: 50px auto;*/
+/*    padding: 30px;*/
+/*    display: flex;*/
+/*    flex-direction: row;   !* 🟢 Row instead of column *!*/
+/*    flex-wrap: wrap;       !* ✅ For responsive fallback *!*/
+/*    gap: 25px;*/
+/*    justify-content: center;*/
+/*  }*/
+/*  */
+/*  */
+/*  !* Shared box style *!*/
+/*  .dashboard-card {*/
+/*    background: #ffffff;*/
+/*    padding: 20px 25px;*/
+/*    border-radius: 14px;*/
+/*    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);*/
+/*    border: 1px solid #e2e8f0;*/
+/*    text-align: center;*/
+/*    background-image: linear-gradient(to top right, #f0fff4, #e6fffa);*/
+/*    transition: 0.3s ease;*/
+/*    */
+/*    width: 300px; !* 🟢 Adjust as needed *!*/
+/*    flex: 1 1 250px; !* ✅ Responsive flex grow *!*/
+/*  }*/
+/*  */
+/*  */
+/*  .dashboard-card:hover {*/
+/*    transform: scale(1.02);*/
+/*  }*/
+/*  */
+/*  !* Icons inside cards *!*/
+/*  .dashboard-card i {*/
+/*    color: #2f855a;*/
+/*    margin-right: 8px;*/
+/*    font-size: 1.2rem;*/
+/*  }*/
+/*  */
+/*  !* Eco Points *!*/
+/*  .eco-points {*/
+/*    font-size: 1.2rem;*/
+/*    font-weight: 600;*/
+/*    color: #2d3748;*/
+/*  }*/
+/*  */
+/*  #ecoPoints {*/
+/*    font-weight: bold;*/
+/*    color: #38a169;*/
+/*    font-size: 1.4rem;*/
+/*  }*/
+/*  */
+/*  !* Streak *!*/
+/*  .streak-tracker {*/
+/*    font-size: 1.2rem;*/
+/*    font-weight: 500;*/
+/*    color: #dd6b20;*/
+/*  }*/
+/*  */
+/*  !* Badge Progress *!*/
+/*  .badge-progress h3 {*/
+/*    font-size: 1.2rem;*/
+/*    margin-bottom: 12px;*/
+/*    color: #2d3748;*/
+/*  }*/
+/*  */
+/*  .progress-container {*/
+/*    background: #edf2f7;*/
+/*    border-radius: 10px;*/
+/*    overflow: hidden;*/
+/*    height: 25px;*/
+/*    width: 100%;*/
+/*  }*/
+/*  */
+/*  .progress-bar {*/
+/*    height: 100%;*/
+/*    background: linear-gradient(to right, #48bb78, #38a169);*/
+/*    color: white;*/
+/*    font-weight: 600;*/
+/*    text-align: center;*/
+/*    line-height: 25px;*/
+/*    transition: width 0.4s ease-in-out;*/
+/*  }*/
+/*  */
+/*  */
+
+/*  !* Responsive *!*/
+/*  @media (max-width: 768px) {*/
+/*    .impact-cards {*/
+/*      flex-direction: column;*/
+/*      align-items: center;*/
+/*    }*/
+/*  */
+/*    .impact-card {*/
+/*      width: 80%;*/
+/*    }*/
+/*  }*/
+/*  */
+
+/*  #success-msg {*/
+/*    margin-top: 25px;*/
+/*    font-weight: bold;*/
+/*    color: #38a169;*/
+/*  }*/
+/*  */
+/*  !* ====== PREMIUM FOOTER STYLING ====== *!*/
+/*.dashboard-footer {*/
+/*    background-color: #064e3b;*/
+/*    color: #d1fae5;*/
+/*    padding: 50px 60px 30px;*/
+/*    font-family: 'Segoe UI', sans-serif;*/
+/*    position: relative;*/
+/*  }*/
+/*  */
+/*  .footer-content {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    gap: 40px;*/
+/*    justify-content: space-between;*/
+/*  }*/
+/*  */
+/*  .footer-brand img {*/
+/*    width: 45px;*/
+/*    height: 45px;*/
+/*    margin-bottom: 10px;*/
+/*  }*/
+/*  */
+/*  .footer-brand h3 {*/
+/*    color: #5eead4;*/
+/*    margin: 0;*/
+/*  }*/
+/*  */
+/*  .footer-brand p {*/
+/*    font-size: 14px;*/
+/*    color: #a7f3d0;*/
+/*    margin-top: 5px;*/
+/*  }*/
+/*  */
+/*  .social-icons a {*/
+/*    color: #d1fae5;*/
+/*    margin-right: 12px;*/
+/*    font-size: 18px;*/
+/*    transition: color 0.3s;*/
+/*  }*/
+/*  */
+/*  .social-icons a:hover {*/
+/*    color: #5eead4;*/
+/*  }*/
+/*  */
+/*  .footer-links h4,*/
+/*  .footer-contact h4,*/
+/*  .newsletter h4 {*/
+/*    margin-bottom: 10px;*/
+/*    color: #a7f3d0;*/
+/*  }*/
+/*  */
+/*  .footer-links ul {*/
+/*    list-style: none;*/
+/*    padding: 0;*/
+/*  }*/
+/*  */
+/*  .footer-links ul li {*/
+/*    margin: 8px 0;*/
+/*  }*/
+/*  */
+/*  .footer-links ul li a {*/
+/*    color: #d1fae5;*/
+/*    text-decoration: none;*/
+/*    font-size: 14px;*/
+/*  }*/
+/*  */
+/*  .footer-links ul li a:hover {*/
+/*    color: #5eead4;*/
+/*  }*/
+/*  */
+/*  .footer-contact p {*/
+/*    font-size: 14px;*/
+/*    margin: 6px 0;*/
+/*  }*/
+/*  */
+/*  .footer-contact i {*/
+/*    margin-right: 8px;*/
+/*    color: #5eead4;*/
+/*  }*/
+/*  */
+/*  .newsletter form {*/
+/*    display: flex;*/
+/*    margin-top: 10px;*/
+/*  }*/
+/*  */
+/*  .newsletter input {*/
+/*    padding: 8px 12px;*/
+/*    border-radius: 5px 0 0 5px;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    width: 200px;*/
+/*  }*/
+/*  */
+/*  .newsletter button {*/
+/*    background-color: #10b981;*/
+/*    color: #fff;*/
+/*    border: none;*/
+/*    padding: 8px 12px;*/
+/*    border-radius: 0 5px 5px 0;*/
+/*    cursor: pointer;*/
+/*  }*/
+/*  */
+/*  .newsletter button:hover {*/
+/*    background-color: #059669;*/
+/*  }*/
+/*  */
+/*  .footer-bottom {*/
+/*    text-align: center;*/
+/*    margin-top: 40px;*/
+/*    border-top: 1px solid #115e59;*/
+/*    padding-top: 20px;*/
+/*    font-size: 13px;*/
+/*    color: #a7f3d0;*/
+/*    position: relative;*/
+/*  }*/
+/*  .back-to-top {*/
+/*    color: white;*/
+/*    margin-left: 15px;*/
+/*    font-size: 1.2rem;*/
+/*  }*/
+/*  */
+/*   !* ====== Quote Section ====== *!*/
+/*   .quote-section {*/
+/*    margin: 60px auto 30px;*/
+/*    max-width: 600px;*/
+/*    padding: 20px;*/
+/*    text-align: center;*/
+/*    background: #f0fdf4;*/
+/*    border-left: 5px solid #10b981;*/
+/*    border-radius: 10px;*/
+/*  }*/
+/*  */
+/*  .quote-section blockquote {*/
+/*    font-style: italic;*/
+/*    color: #065f46;*/
+/*  }*/
+/*  */
+/*  .quote-section span {*/
+/*    display: block;*/
+/*    margin-top: 10px;*/
+/*    font-weight: bold;*/
+/*    color: #047857;*/
+/*  }*/
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0fff4;
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.track-section {
+    background: linear-gradient(135deg, #d4fc79, #96e6a1);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+.track-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.track-card label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.track-card input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.track-card.full {
+    grid-column: span 2;
+}
+
+.submit-btn {
+    margin-top: 1.5rem;
+    display: block;
+    width: 100%;
+    background: #00b894;
+    color: white;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #019875;
+    cursor: pointer;
+}
+
+.history-section {
+    margin-top: 3rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.history-section h2 {
+    margin-bottom: 1rem;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+}
+
+.history-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}

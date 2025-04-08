@@ -1,0 +1,303 @@
+
+{% load static %}
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoKartavya 🌿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+ <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<style>
+  body {
+    background: linear-gradient(to bottom right, #e0f7ec, #f0fdf4);
+    color: #1e293b;
+    font-family: 'Quicksand', sans-serif;
+    padding: 2rem;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(14px);
+    border: 2px solid #bbf7d0;
+    box-shadow: 0 12px 25px rgba(72, 187, 120, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .glass:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(72, 187, 120, 0.25);
+  }
+
+  h1, h2 {
+    background: linear-gradient(to right, #22c55e, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  input, input[type="text"], input[type="number"] {
+    background: #ecfdf5;
+    border: 2px solid #a7f3d0;
+    padding: 12px 16px;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: #047857;
+    width: 100%;
+    transition: 0.3s ease;
+  }
+
+  input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3);
+  }
+
+  .submit-btn {
+    background: linear-gradient(to right, #22c55e, #4ade80);
+    padding: 14px 36px;
+    font-size: 1.2rem;
+    border-radius: 9999px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+  }
+
+  .progress-bar {
+    height: 10px;
+    background: #d1fae5;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #6ee7b7, #34d399);
+    animation: fillProgress 1s ease-out forwards;
+  }
+
+  @keyframes fillProgress {
+    from { width: 0%; }
+    to { width: var(--progress); }
+  }
+
+  .eco-history li {
+    background: rgba(240, 253, 244, 0.9);
+    padding: 1rem;
+    border-radius: 1rem;
+    border-left: 5px solid #22c55e;
+    transition: transform 0.2s ease;
+  }
+
+  .eco-history li:hover {
+    transform: scale(1.01);
+    background: #d1fae5;
+  }
+
+  .fancy-box {
+    border: 3px dashed #bbf7d0;
+    padding: 2rem;
+    border-radius: 1.25rem;
+    text-align: center;
+    background: #f0fdf4;
+  }
+
+  .custom-label {
+    display: block;
+    font-weight: 600;
+    color: #059669;
+    margin-bottom: 0.5rem;
+  }
+  .profile-container {
+      display: flex;
+      justify-content: center;
+      margin: 50px 20px 30px;
+    }
+
+    .profile-card {
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .profile-icon {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #81c784;
+    }
+
+    .profile-card h2 {
+      font-size: 28px;
+      margin: 10px 0;
+    }
+
+    .profile-email {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .eco-details p {
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .eco-details i {
+      color: #4caf50;
+      margin-right: 6px;
+    }
+
+    .badges {
+      text-align: center;
+      margin: 60px 0 30px;
+    }
+
+    .badges h2 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .badge-images {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .badge-images img {
+      height: 100px;
+      transition: transform 0.3s ease;
+    }
+
+    .badge-images img:hover {
+      transform: scale(1.1);
+    }
+</style>
+
+</head>
+<body class="p-6">
+<nav class="bg-white bg-opacity-70 backdrop-blur-lg border border-emerald-100 rounded-full shadow-md mb-10 px-6 py-4 flex justify-between items-center max-w-5xl mx-auto">
+  <div class="text-2xl font-bold text-emerald-600 tracking-wide">
+    🌿 EcoKartavya
+  </div>
+  <ul class="flex gap-6 text-emerald-800 font-semibold text-lg">
+    <li><a href="{% url 'home' %}" class="hover:text-emerald-500 transition duration-300">Home</a></li>
+    <li><a href="{% url 'profile' %}" class="hover:text-emerald-500 transition duration-300">Profile</a></li>
+    <li><a href="{% url 'dashboard' %}" class="hover:text-emerald-500 transition duration-300">Dashboard</a></li>
+    <li><a href="#" class="hover:text-emerald-500 transition duration-300">Achievements</a></li>
+  </ul>
+</nav>
+
+  <div class="max-w-5xl mx-auto space-y-10">
+
+
+    <!-- Header -->
+    <div class="text-center">
+      <h1 class="fancy-title font-extrabold mb-2 drop-shadow-md">Welcome, {{ user.username|title }} 👋</h1>
+      <p class="text-xl text-emerald-700 mb-4">Track your green actions & live eco-consciously 🌼</p>
+    </div>
+        <section class="profile-container">
+  <div class="profile-card">
+    <img src="{% static 'images/avatar_bg_clear.png' %}" alt="User Icon" class="profile-icon" style="display: block; margin: 0 auto;">
+    <h2>{{ user.first_name|default:user.username }}</h2>
+    <p class="profile-email"><i class="fas fa-envelope"></i> {{ user.email }}</p>
+    <div class="eco-details">
+      <p><i class="fas fa-leaf"></i> EcoPoints: <strong>120</strong></p>
+      <p><i class="fas fa-award"></i> Badges Earned: <strong>3</strong></p>
+    </div>
+  </div>
+</section>
+
+    <!-- Total Summary -->
+    <div class="glass rounded-2xl p-6 text-center">
+      <h2 class="text-3xl font-bold text-emerald-500 mb-2">🌱 Your Total Impact</h2>
+      <p class="text-lg text-emerald-800">
+        💧 Water: {{ total.water }}L &nbsp; ⚡ Electricity: {{ total.electricity }}W &nbsp; 🛍️ Bags: {{ total.bags }} &nbsp; 🌳 Trees: {{ total.trees }}
+      </p>
+    </div>
+
+    <!-- Form Section -->
+    <form method="POST" class="space-y-8">
+      {% csrf_token %}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {% for field in eco_fields %}
+        <div class="glass p-6 rounded-xl">
+          <label for="{{ field }}">{{ field|replace_underscore }}</label>
+          <input type="number" name="{{ field }}" min="0" value="{{ eco_data|get_field:field }}">
+          <div class="progress-bar">
+            <div class="progress-fill" style="--progress: {{ eco_data|get_field:field|default:0 }}%;"></div>
+          </div>
+        </div>
+        {% endfor %}
+
+        <!-- Custom Action -->
+        <div class="glass p-6 rounded-xl col-span-full">
+          <label for="custom_action">✨ Custom Action</label>
+          <input type="text" name="custom_action" placeholder="E.g. Donated clothes..." value="{{ eco_data.custom_action }}">
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="submit-btn">🌿 Save My Green Actions</button>
+      </div>
+    </form>
+
+    <!-- Success Animation -->
+    <div class="flex justify-center" id="success-animation" style="display: none;">
+      <lottie-player
+        src="https://assets2.lottiefiles.com/packages/lf20_jbrw3hcz.json"
+        background="transparent"
+        speed="1"
+        style="width: 220px; height: 220px;"
+        autoplay>
+      </lottie-player>
+    </div>
+
+    <!-- History -->
+    <div class="glass rounded-2xl p-6">
+      <h2 class="text-2xl font-bold text-emerald-500 mb-4">📅 Your Eco History</h2>
+      {% if history %}
+        <ul class="eco-history">
+          {% for entry in history %}
+          <li>
+            <strong>{{ entry.date }}:</strong>
+            Water: {{ entry.water }}L, Electricity: {{ entry.electricity }}W, Bags: {{ entry.bags }}, Trees: {{ entry.trees }}
+          </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-emerald-700">No past records yet. Start tracking today! 🌿</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+    const animation = document.getElementById('success-animation');
+    form.addEventListener('submit', () => {
+      animation.style.display = 'flex';
+    });
+  </script>
+
+</body>
+</html>
+

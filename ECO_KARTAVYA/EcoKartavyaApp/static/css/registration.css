@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #e6f4ea;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #064e3b;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #a7f3d0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-logo img {
+    height: 32px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+  }
+  
+  .nav-links li a {
+    color: #d1fae5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #34d399;
+  }
+  
+  /* Register Form */
+  .register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+  }
+  
+  .register-container {
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+  }
+  
+  .register-container h2 {
+    color: #065f46;
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
+  
+  .register-container p {
+    color: #4b5563;
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+  
+  form input, form select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #10b981;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #059669;
+  }
+  
+  .already {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .already a {
+    color: #10b981;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  

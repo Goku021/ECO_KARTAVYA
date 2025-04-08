@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EcoKartavya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="{% static 'js/home.js' %}"></script>
+
+</head>
+
+<header>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="{% static 'images/e9.png' %}" alt="Eco Logo">
+            <span>EcoKartavya</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-leaf"></i> Glimpse</a></li>
+            <li><a href="#"><i class="fas fa-award"></i> Rewards</a></li>
+            <li><a href="{% url 'learn' %}"><i class="fas fa-lightbulb"></i> Awareness</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Impact</a></li>
+            <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'track' %}" title="Your Profile">
+                        <i class="fas fa-user-circle"></i> Track Data
+                    </a>
+                </li>
+
+            {% endif %}
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'profile' %}" title="Your Profile">
+                        <i class="fas fa-user-circle"></i> {{ user.username|title }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            {% else %}
+                <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a href="{% url 'signup' %}"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+
+<body>
+<section class="hero">
+    <h1>Towards a Greener India,<br><span>One Step at a Time</span></h1>
+    <p>Join the movement. Track your habits. Earn impact.</p>
+    <button onclick="startTracking()">Start Tracking →</button>
+</section>
+
+<section class="why">
+    <h2>Why EcoKartavya?</h2>
+    <div class="features">
+        <div class="feature">
+            <img src="{% static 'images/e5.png' %}" alt="Track Eco Actions">
+            <p>Track<br>Eco Actions</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'images/e2.png' %}" alt="Earn Points">
+            <p>Earn Points<br>& Badges</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'images/e3.png' %}" alt="Take Pledges">
+            <p>Take<br>Pledges</p>
+        </div>
+    </div>
+</section>
+
+<section class="glimpse">
+    <h2><img src="{% static 'images/e12.png' %}" alt="leaf" class="glimpse-icon"> Get a Glimpse of Your Daily Impact
+    </h2>
+    <p class="glimpse-subtext">Track your eco-actions & earn impact badges every single day 🌱</p>
+
+    <div class="impact-container">
+        <div class="impact-card">
+            <img src="{% static 'images/e13.png' %}" alt="cloth bag" class="impact-icon">
+            <p><strong>Used a Cloth Bag</strong><br><span>Reduced plastic by 1 unit</span></p>
+        </div>
+        <div class="impact-card">
+            <img src="{% static 'images/e11.png' %}" alt="water save" class="impact-icon">
+            <p><strong>Saved Water</strong><br><span>20L conserved today</span></p>
+        </div>
+        <div class="impact-card">
+            <img src="{% static 'images/e14.png' %}" alt="electricity" class="impact-icon">
+            <p><strong>Saved Electricity</strong><br><span>Turned off devices on time</span></p>
+        </div>
+        <div class="impact-card">
+            <img src="{% static 'images/e10.png' %}" alt="transport" class="impact-icon">
+            <p><strong>Used Public Transport</strong><br><span>Cut 0.5 kg CO₂</span></p>
+        </div>
+    </div>
+</section>
+
+
+<section class="badges">
+    <h2>Unlock Badges & Rewards</h2>
+    <div class="badge-images">
+        <img src="{% static 'images/e6.png' %}" alt="Star Badge">
+        <img src="{% static 'images/e7.png' %}" alt="Green Shield">
+        <img src="{% static 'images/e8.png' %}" alt="Medal">
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <h2>EcoKartavya 🌿</h2>
+        <p>एक प्रयास – पर्यावरण उल्लास की ओर | Together for a Greener Tomorrow 🌍</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+        </div>
+        <p class="footer-copy">&copy; 2025 EcoKartavya. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

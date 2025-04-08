@@ -1,0 +1,266 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EcoKartavya - Registration</title>
+
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Style -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #d1fae5, #f0fdf4);
+            font-family: 'Quicksand', sans-serif;
+            color: #065f46;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #a7f3d0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #047857;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #047857;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #065f46;
+        }
+
+        .register-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 1rem;
+            min-height: 100vh;
+        }
+
+        .register-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(34, 197, 94, 0.15);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(14px);
+            border: 2px solid #bbf7d0;
+        }
+
+        .register-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #22c55e, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .register-container p {
+            font-size: 1rem;
+            color: #064e3b;
+            margin-bottom: 1.5rem;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1.2rem;
+            border: 2px solid #a7f3d0;
+            border-radius: 1rem;
+            background-color: #ecfdf5;
+            font-size: 1rem;
+            color: #065f46;
+            transition: 0.3s ease;
+        }
+
+        form input:focus,
+        form select:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3);
+        }
+
+        button {
+            width: 100%;
+            background: linear-gradient(to right, #22c55e, #4ade80);
+            border: none;
+            color: white;
+            padding: 0.9rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.25);
+        }
+
+        .already {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .already a {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        @media (max-width: 500px) {
+            .register-container {
+                padding: 1.5rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                padding-top: 1rem;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #188568;
+            border-bottom: 2px solid #10b981;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #bbf7d0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="nav-logo">
+        <img src="{% static 'images/e9.png' %}" alt="EcoKartavya Logo">
+        <span>EcoKartavya</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a href="{% url 'signup' %}"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+    </ul>
+</nav>
+
+<!-- ===== REGISTRATION FORM ===== -->
+<section class="register-section">
+    <div class="register-container">
+        <h2><i class="fas fa-user-edit"></i> Create Your EcoKartavya Profile</h2>
+        <p>🌍 Join the green revolution by creating your personalized eco-profile!</p>
+
+        <form action="/register" method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="👤 Username" required>
+            <input type="text" name="full_name" placeholder="🧑 Full Name" required>
+            <input type="email" name="email" placeholder="📧 Email Address" required>
+            <input type="password" name="password" placeholder="🔒 Password" required>
+            <input type="password" name="confirm_password" placeholder="🔒 Confirm Password" required>
+
+            <select name="location" required>
+                <option value="">🌍 Select Location</option>
+                <option value="Urban">Urban</option>
+                <option value="Rural">Rural</option>
+            </select>
+
+            <select name="interest" required>
+                <option value="">🌱 Eco Interest</option>
+                <option value="Water Conservation">Water Conservation</option>
+                <option value="Tree Plantation">Tree Plantation</option>
+                <option value="Plastic Reduction">Plastic Reduction</option>
+            </select>
+
+            <button type="submit">🌿 Register</button>
+        </form>
+
+        <p class="already">Already have an account? <a href="{% url 'login' %}">Log in here</a></p>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* ===== Global Styles ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e6f4ea, #c6f6d5);
+  }
+  
+  /* ===== Navbar ===== */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #064e3b;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #a7f3d0;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .nav-logo img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #d1fae5;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #5eead4;
+  }
+  
+  .nav-links i {
+    margin-right: 6px;
+  }
+  
+  /* ===== Login Container ===== */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+  }
+  
+  .form-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    text-align: center;
+  }
+  
+  .form-box h2 {
+    color: #065f46;
+    margin-bottom: 10px;
+  }
+  
+  .form-box p {
+    color: #4b5563;
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+  
+  /* ===== Input Group ===== */
+  .input-group {
+    display: flex;
+    align-items: center;
+    background-color: #f0fdf4;
+    border: 1px solid #d1fae5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .input-group i {
+    margin-right: 10px;
+    color: #10b981;
+  }
+  
+  .input-group input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  /* ===== Login Button ===== */
+  .login-btn {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s ease;
+    width: 100%;
+  }
+  
+  .login-btn:hover {
+    background-color: #059669;
+  }
+  
+  .signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .signup-link a {
+    color: #0f766e;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  

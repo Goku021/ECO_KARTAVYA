@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoKartavya | Learn</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/learn.css' %}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">EcoKartavya</div>
+    <ul class="nav-links">
+        <li><a href="{% url 'home' %}"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="tracker.html"><i class="fas fa-check-square"></i>Tracker</a></li>
+      <li><a href="rewards.html"><i class="fas fa-award"></i>Rewards</a></li>
+      <li><a href="learn.html" class="active"><i class="fas fa-leaf"></i>Learn</a></li>
+    </ul>
+  </nav>
+
+  <header class="learn-header">
+    <h1><i class="fas fa-book-reader"></i> Learn Green. Live Clean.</h1>
+    <p>Explore powerful eco-actions you can start today.</p>
+  </header>
+
+  <section class="learn-cards">
+  
+    <!-- Save Water -->
+    <div class="card">
+      <i class="fas fa-tint"></i>
+      <h3>Save Water</h3>
+      <p>Turn off taps while brushing. Use buckets instead of showers to save 50L daily.</p>
+    </div>
+  
+    <!-- Conserve Energy -->
+    <div class="card">
+      <i class="fas fa-bolt"></i>
+      <h3>Conserve Energy</h3>
+      <p>Switch off unused lights & fans. Switch to LED bulbs — save up to 80% energy.</p>
+    </div>
+  
+    <!-- Recycle Right -->
+    <div class="card">
+      <i class="fas fa-recycle"></i>
+      <h3>Recycle Right</h3>
+      <p>Separate wet and dry waste. Donate or upcycle reusable materials.</p>
+    </div>
+  
+    <!-- Use Bicycle -->
+    <div class="card">
+      <i class="fas fa-bicycle"></i>
+      <h3>Cycle Often</h3>
+      <p>Use bicycles for nearby travel — zero emissions and promotes health!</p>
+    </div>
+  
+    <!-- Use Public Transport -->
+    <div class="card">
+      <i class="fas fa-bus-alt"></i>
+      <h3>Use Public Transport</h3>
+      <p>Reduce your carbon footprint by opting for buses, trains, or carpooling.</p>
+    </div>
+  
+    <!-- Avoid Plastic -->
+    <div class="card">
+      <i class="fas fa-ban"></i>
+      <h3>Avoid Single-Use Plastic</h3>
+      <p>Say no to plastic bags and straws. Carry reusable alternatives daily.</p>
+    </div>
+  
+    <!-- Plant Trees -->
+    <div class="card">
+      <i class="fas fa-tree"></i>
+      <h3>Plant Trees</h3>
+      <p>Green spaces absorb CO₂ and keep cities cool. Pledge to plant one tree a month.</p>
+    </div>
+  
+    <!-- Compost Waste -->
+    <div class="card">
+      <i class="fas fa-seedling"></i>
+      <h3>Compost Waste</h3>
+      <p>Turn kitchen waste into natural fertilizer. Eco-friendly and soil-loving!</p>
+    </div>
+  
+    <!-- Eco-Friendly Shopping -->
+    <div class="card">
+      <i class="fas fa-shopping-bag"></i>
+      <h3>Eco-Friendly Shopping</h3>
+      <p>Support local brands. Choose products with minimal or eco-packaging.</p>
+    </div>
+  
+    <!-- Digital Receipts -->
+    <div class="card">
+      <i class="fas fa-receipt"></i>
+      <h3>Choose Digital Receipts</h3>
+      <p>Go paperless. Opt for digital receipts to save trees and reduce paper waste.</p>
+    </div>
+  
+    <!-- Save Paper -->
+    <div class="card">
+      <i class="fas fa-copy"></i>
+      <h3>Save Paper</h3>
+      <p>Think before you print. Use e-notes, e-books, and online forms.</p>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-solar-panel"></i>
+        <h3>Switch to Solar</h3>
+        <p>Harness clean solar energy at home to cut down electricity bills and reduce carbon emissions.</p>
+      </div>
+      
+  
+  </section>
+  
+
+  <section class="learn-quote">
+    <blockquote>
+      “The greatest threat to our planet is the belief that someone else will save it.”
+      <span>– Robert Swan</span>
+    </blockquote>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 EcoKartavya. Designed for a Greener Tomorrow. 🌱</p>
+  </footer>
+
+  <script src="{% static 'js/learn.js' %}"></script>
+</body>
+</html>

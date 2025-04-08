@@ -1,0 +1,371 @@
+{#{% load static %}#}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8"/>#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>#}
+{#    <title>EcoKartavya - Sign Up</title>#}
+{#    <link rel="stylesheet" href="{% static 'css/signup.css' %}">#}
+{#    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#<!-- ======= NAVBAR ======= -->#}
+{#<nav class="navbar">#}
+{#    <div class="nav-logo">#}
+{#        <img src="{% static 'images/e9.png' %}" alt="EcoKartavya Logo">#}
+{#        <span>EcoKartavya</span>#}
+{#    </div>#}
+{#    <ul class="nav-links">#}
+{#        <li><a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>#}
+{#        <li><a href="/signup"><i class="fas fa-user-plus"></i> Signup</a></li>#}
+{#    </ul>#}
+{#</nav>#}
+{##}
+{#<!-- ======= SIGNUP FORM ======= -->#}
+{#<div class="signup-container">#}
+{#    <div class="form-box">#}
+{#        <h2><i class="fas fa-leaf"></i> Create Your Green Identity</h2>#}
+{#        <p class="subtext">Sign up to start earning EcoPoints and track your sustainability journey 🌱</p>#}
+{##}
+{#        <form action="/signup/" method="POST">#}
+{#            {% csrf_token %}#}
+{#            <div class="input-group">#}
+{#                <i class="fas fa-user"></i>#}
+{#                <input type="text" name="username" placeholder="Full Name" required/>#}
+{#            </div>#}
+{##}
+{#            <div class="input-group">#}
+{#                <i class="fas fa-envelope"></i>#}
+{#                <input type="email" name="email" placeholder="Email Address" required/>#}
+{#            </div>#}
+{##}
+{#            <div class="input-group">#}
+{#                <i class="fas fa-lock"></i>#}
+{#                <input type="password" name="password" placeholder="Password" required/>#}
+{#            </div>#}
+{##}
+{#            <div class="input-group">#}
+{#                <i class="fas fa-lock"></i>#}
+{#                <input type="password" name="confirm" placeholder="Confirm Password" required/>#}
+{#            </div>#}
+{##}
+{#            <button type="submit" class="signup-btn">Create Account</button>#}
+{#        </form>#}
+{##}
+{#        <p class="login-link">Already part of the green family? <a href="/login/">Log In</a></p>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#<script src="{% static 'js/login.js' %}"></script>#}
+{#</body>#}
+{#</html>#}
+{##}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EcoKartavya - Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Body Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to bottom right, #d1fae5, #f0fdf4);
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #188568; /* dark green */
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 3;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #bbf7d0;
+        }
+
+        /* Signup Form */
+        .signup-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(34, 197, 94, 0.2);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .form-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #047857;
+        }
+
+        .form-box .subtext {
+            color: #065f46;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            background-color: #ecfdf5;
+            border-radius: 1rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid #a7f3d0;
+        }
+
+        .input-group i {
+            margin-right: 10px;
+            color: #047857;
+        }
+
+        .input-group input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            font-size: 1rem;
+            color: #065f46;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 2rem;
+            background: linear-gradient(to right, #22c55e, #4ade80);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .signup-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.25);
+        }
+
+        .login-link {
+            margin-top: 1rem;
+        }
+
+        .login-link a {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        /* Floating Leaves */
+        .floating-leaves {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 30px;
+            opacity: 0.7;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .leaf-1 {
+            left: 10%;
+            animation-duration: 16s;
+            animation-delay: 0s;
+        }
+
+        .leaf-2 {
+            left: 25%;
+            animation-duration: 20s;
+            animation-delay: 3s;
+        }
+
+        .leaf-3 {
+            left: 40%;
+            animation-duration: 18s;
+            animation-delay: 6s;
+        }
+
+        .leaf-4 {
+            left: 55%;
+            animation-duration: 22s;
+            animation-delay: 1s;
+        }
+
+        .leaf-5 {
+            left: 70%;
+            animation-duration: 19s;
+            animation-delay: 4s;
+        }
+
+        .leaf-6 {
+            left: 85%;
+            animation-duration: 17s;
+            animation-delay: 2s;
+        }
+
+        .leaf-7 {
+            left: 50%;
+            animation-duration: 21s;
+            animation-delay: 5s;
+        }
+
+        .leaf-8 {
+            left: 35%;
+            animation-duration: 23s;
+            animation-delay: 7s;
+        }
+
+        @media (max-width: 500px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 1rem;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0;
+            }
+
+            .form-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ======= NAVBAR ======= -->
+<nav class="navbar">
+    <div class="nav-logo">
+        <img src="{% static 'images/e9.png' %}" alt="EcoKartavya Logo">
+        <span>EcoKartavya</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a href="/signup"><i class="fas fa-user-plus"></i> Signup</a></li>
+    </ul>
+</nav>
+
+<!-- ======= FLOATING LEAVES ======= -->
+<div class="floating-leaves">
+    {% for i in "12345678" %}
+        <img src="{% static 'images/leaf.png' %}" class="leaf leaf-{{ forloop.counter }}"/>
+    {% endfor %}
+</div>
+
+<!-- ======= SIGNUP FORM ======= -->
+<div class="signup-container">
+    <div class="form-box">
+        <h2><i class="fas fa-leaf"></i> Create Your Green Identity</h2>
+        <p class="subtext">Sign up to start earning EcoPoints and track your sustainability journey 🌱</p>
+
+        <form action="/signup/" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" placeholder="Full Name" required/>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email Address" required/>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" required/>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="confirm" placeholder="Confirm Password" required/>
+            </div>
+
+            <button type="submit" class="signup-btn">Create Account</button>
+        </form>
+
+        <p class="login-link">Already part of the green family? <a href="/login/">Log In</a></p>
+    </div>
+</div>
+
+</body>
+</html>
