@@ -17,6 +17,19 @@ def learn(request):
 
 
 from django.contrib.auth.decorators import login_required
+
+
+@login_required
+def redeem_view(request):
+    return render(request, 'redeem.html')
+
+
+@login_required
+def community(request):
+    return render(request, 'community.html')
+
+
+from django.contrib.auth.decorators import login_required
 from django.db.models import Sum
 from datetime import date, timedelta
 

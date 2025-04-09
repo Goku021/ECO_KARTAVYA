@@ -2,91 +2,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eco Tips</title>
-  <link rel="stylesheet" href="{% static 'css/eco-tips.css' %}">
-  <script src="{% static 'js/eco-tips.js' %}"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Tips</title>
+    <link rel="stylesheet" href="{% static 'css/eco-tips.css' %}">
+    <script src="{% static 'js/eco-tips.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-logo">
-          <img src="{% static 'images/e9.png' %}" alt="EcoKartavya Logo">
-          EcoKartavya
-        </div>
-        <ul class="nav-links">
-          <li><a href="/home"><i class="fas fa-home"></i>Home</a></li>
-          <li><a href="/track"><i class="fas fa-check-square"></i>Track</a></li>
-          <li><a href="/badges"><i class="fas fa-award"></i>Badges</a></li>
-          <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
-        </ul>
-      </nav>
-  <header>
+<nav class="navbar">
+    <div class="nav-logo">
+        <img src="{% static 'images/e9.png' %}" alt="EcoKartavya Logo">
+        EcoKartavya
+    </div>
+    <ul class="nav-links">
+        <li><a href="/home"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="/track"><i class="fas fa-check-square"></i>Track</a></li>
+        <li><a href="/dashboard"><i class="fas fa-award"></i>Badges</a></li>
+        <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+    </ul>
+</nav>
+<header>
     <h1>Eco Tips for a Sustainable Lifestyle</h1>
     <p>Simple steps to make a big impact on the environment.</p>
-  </header>
-  <main>
+</header>
+<main>
     <section class="tips-container">
-      <!-- Tips will be dynamically inserted here -->
+        <!-- Tips will be dynamically inserted here -->
     </section>
-  </main>
+</main>
 
-  <!-- ====== PREMIUM FOOTER ====== -->
+<!-- ====== PREMIUM FOOTER ====== -->
 <footer class="dashboard-footer">
     <div class="footer-content">
-      <!-- Brand & Tagline -->
-      <div class="footer-brand">
-        <img src="{% static 'images/e9.png' %}" alt="EcoKartavya Logo">
-        <h3>EcoKartavya</h3>
-        <p>Empowering you to build a greener tomorrow 🌱</p>
-  
-        <!-- Social Icons -->
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <!-- Brand & Tagline -->
+        <div class="footer-brand">
+            <img src="{% static 'images/e9.png' %}" alt="EcoKartavya Logo">
+            <h3>EcoKartavya</h3>
+            <p>Empowering you to build a greener tomorrow 🌱</p>
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
-      </div>
-  
-      <!-- Useful Links -->
-      <div class="footer-links">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="/home">Home</a></li>
-          <li><a href="/learn">Learn</a></li>
-          <li><a href="/track">Track</a></li>
-          <!-- <li><a href="/badges">Badges</a></li> -->
-        </ul>
-      </div>
-  
-      <!-- Contact Info -->
-      <div class="footer-contact">
-        <h4>Contact Us</h4>
-        <p><i class="fas fa-envelope"></i> hello@ecokartavya.org</p>
-        <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
-        <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
-      </div>
-  
-      <!-- Newsletter -->
-      <div class="newsletter">
-        <h4>Join Our Green Tribe 🌿</h4>
-        <p>Get weekly tips and updates right in your inbox.</p>
-        <form>
-          <input type="email" placeholder="Your email address" required>
-          <button type="submit">submit<i class="fas fa-paper-plane"></i></button>
-        </form>
-      </div>
+
+        <!-- Useful Links -->
+        <div class="footer-links">
+            <h4>Explore</h4>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/learn">Learn</a></li>
+                <li><a href="/track">Track</a></li>
+                <!-- <li><a href="/badges">Badges</a></li> -->
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p><i class="fas fa-envelope"></i> hello@ecokartavya.org</p>
+            <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+            <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+            <h4>Join Our Green Tribe 🌿</h4>
+            <p>Get weekly tips and updates right in your inbox.</p>
+            <form>
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">submit<i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
     </div>
-  
+
     <div class="footer-bottom">
-      <p>&copy; 2025 EcoKartavya | Designed with 💚 for a better planet.</p>
-      <!-- <button onclick="scrollToTop()" class="back-to-top"><i class="fas fa-arrow-up"></i></button> -->
+        <p>&copy; 2025 EcoKartavya | Designed with 💚 for a better planet.</p>
+        <!-- <button onclick="scrollToTop()" class="back-to-top"><i class="fas fa-arrow-up"></i></button> -->
     </div>
-  </footer>
-  
+</footer>
+
 
 </body>
 </html>

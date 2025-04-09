@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Redeem Credits - EcoKartavya</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f9f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2e4d3f;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #2e7d32;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .credit-balance {
+            font-size: 28px;
+            color: #388e3c;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .rewards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .reward-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .reward-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .reward-card img {
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .reward-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .reward-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .redeem-btn {
+            margin-top: 15px;
+            background-color: #43a047;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .redeem-btn:hover {
+            background-color: #388e3c;
+        }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Redeem Your Credits</h1>
+    <p>Exchange your eco-points for exciting rewards and subscriptions!</p>
+    <div class="credit-balance">
+        🌱 Available Carbon Credits: <span>350{{ user.profile.carbon_credits }}</span>
+    </div>
+
+    <div class="rewards-grid">
+        <div class="reward-card">
+            <img src="{% static 'images/netflix.jpeg' %}" alt="Netflix">
+            <h3>Netflix</h3>
+            <p>1 Month Subscription</p>
+            <button class="redeem-btn">Redeem 150 Credits</button>
+        </div>
+        <div class="reward-card">
+            <img src="{% static 'images/amazon_prime.jpeg' %}" alt="Amazon">
+            <h3>Amazon Voucher</h3>
+            <p>₹200 Gift Card</p>
+            <button class="redeem-btn">Redeem 180 Credits</button>
+        </div>
+        <div class="reward-card">
+            <img src="{% static 'images/spotify.jpeg' %}" alt="Spotify">
+            <h3>Spotify Premium</h3>
+            <p>1 Month Subscription</p>
+            <button class="redeem-btn">Redeem 120 Credits</button>
+        </div>
+        <div class="reward-card">
+            <img src="{% static 'images/hotstar.jpeg' %}"
+                 alt="Hotstar">
+            <h3>Hotstar</h3>
+            <p>1 Month Premium</p>
+            <button class="redeem-btn">Redeem 130 Credits</button>
+        </div>
+        <div class="reward-card">
+            <img src="{% static 'images/upi.jpeg' %}" alt="Cash">
+            <h3>Cash Transfer</h3>
+            <p>₹250 via UPI</p>
+            <button class="redeem-btn">Redeem 200 Credits</button>
+        </div>
+    </div>
+</div>
+
+<div style="background: #d4edda; color: #155724; margin: 0 auto; padding: 12px 20px; max-width: 900px; border-left: 6px solid #28a745; border-radius: 8px; font-size: 16px; font-weight: 500; animation: fadeInSlide 1s ease-in-out; font-family: 'Rage Italic','Segoe UI Semibold'"
+     class="announcement-banner">
+    Soon, <strong>ECO credits maybe reedemable via CSR-sponsored rewards</strong> <strong></strong>
+</div>
+
+</body>
+</html>

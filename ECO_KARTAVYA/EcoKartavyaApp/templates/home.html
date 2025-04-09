@@ -19,15 +19,19 @@
         </div>
         <ul class="nav-links">
             <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#"><i class="fas fa-leaf"></i> Glimpse</a></li>
-            <li><a href="#"><i class="fas fa-award"></i> Rewards</a></li>
+            <li><a href="{% url 'eco-tips' %}"><i class="fas fa-leaf"></i> ECO-Tips</a></li>
+            <li><a href="{% url 'achivements' %}"><i class="fas fa-award"></i> Achievements</a></li>
             <li><a href="{% url 'learn' %}"><i class="fas fa-lightbulb"></i> Awareness</a></li>
-            <li><a href="#"><i class="fas fa-chart-line"></i> Impact</a></li>
-            <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
+
             {% if user.is_authenticated %}
                 <li>
                     <a href="{% url 'track' %}" title="Your Profile">
                         <i class="fas fa-user-circle"></i> Track Data
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'community' %}" title="Your Profile">
+                        <i class="fas fa-user-circle"></i> Community
                     </a>
                 </li>
 
@@ -56,7 +60,7 @@
 <section class="hero">
     <h1>Towards a Greener India,<br><span>One Step at a Time</span></h1>
     <p>Join the movement. Track your habits. Earn impact.</p>
-    <button onclick="startTracking()">Start Tracking →</button>
+    <button><a style="color: white;text-decoration: none" href="{% url 'track' %}">Start Tracking</a></button>
 </section>
 
 <section class="why">

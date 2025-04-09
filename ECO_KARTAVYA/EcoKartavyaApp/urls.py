@@ -14,8 +14,8 @@ urlpatterns = [
     path('track/', views.track_view, name='track'),
     path('eco-tips/', views.eco_tips, name='eco-tips'),
     path('achivements/', views.achivements_view, name='achivements'),
-    path('profile/', views.profile_view, name='profile')
-
-
+    path('profile/', views.profile_view, name='profile'),
+    path('redeem/', views.redeem_view, name="redeem"),
+    path('community/', views.community, name='community'),
 
 ]
